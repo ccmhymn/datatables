@@ -1,11 +1,13 @@
 /* CUSTOM STYLE */
 
-@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
 
 body,
 select,
-input {
-    font-family: 'Jeju Gothic', sans-serif;
+input,
+div {
+   font-family: 'Do Hyeon', sans-serif;
 }
 
 .wrap {
