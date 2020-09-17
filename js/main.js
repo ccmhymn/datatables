@@ -46,7 +46,7 @@ $(document).ready(function () {
             {"data":"money"}
         ],
         language: lang_kor,
-        },
+	    
         /* Footer에 금액총합 구하기,
          * filtered data 총합만 계산하도록 함.*/
         "footerCallback":function(){
