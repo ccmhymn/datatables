@@ -8,18 +8,19 @@ $(document).ready(function () {
         responsive: true,
         orderMulti: true,
         order : [[1, 'desc']],
-	/*
+	
         columns: [
+	    {"data": "money"},	
             {"data": "id"},
             {"data": "first_name"},
             {"data": "last_name"}, 
             {"data": "email"}, 
             {"data": "gender"}, 
             {"data": "date"},
-            {"data": "ip_address"},
-            {"data": "money"}
+            {"data": "ip_address"}
+
         ],
-	*/
+	
         language: lang_kor,
 	    
         initComplete: function() {
