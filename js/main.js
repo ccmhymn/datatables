@@ -10,12 +10,12 @@ $(document).ready(function () {
         order : [[1, 'desc']],
 	
         columns: [
-	    {"data": "id"},	
+            {"data": "id"},
             {"data": "name"},
-            {"data": "last_name"},
+            {"data": "last_name"}, 
             {"data": "email"}, 
             {"data": "gender"}, 
-            {"data": "date"}, 
+            {"data": "date"},
             {"data": "ip_address"},
             {"data": "money"}
         ],
