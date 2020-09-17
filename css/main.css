@@ -13,7 +13,7 @@ table, tr, td, th {
 
 .wrap {
     width: 100%;
-    margin: 50px auto;
+    margin: 10px auto;
 }
 
 /* 검색창, 페이지당 select 등 input 관련 */
