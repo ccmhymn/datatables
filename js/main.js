@@ -16,7 +16,7 @@ $(document).ready(function () {
         }
     )
 
-    var table = $('#myTable').DataTable({
+var table = $('#myTable').DataTable( {
         ajax: {
             'url':'MOCK_DATA.json', 
             //'type': 'POST',
@@ -34,10 +34,9 @@ $(document).ready(function () {
             {"data": "date"},
             {"data": "ip_address"},
             {"data":"money"}
-        ],
-        },
-        dom : 'Blfrtip',
-    });
-
-
+        ]
+     dom : 'Blfrtip',
+    
+} );
+ 
 });
