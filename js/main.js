@@ -60,8 +60,7 @@ $(document).ready(function () {
 	*/
             initComplete: function() {
                 addFooter();
-	    },
-        dom : 'Blfrtip',	    
+	    }	    
     });
 
     /* Column별 검색기능 추가 */
