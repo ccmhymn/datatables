@@ -37,30 +37,9 @@ $(document).ready(function () {
         ],
         language: lang_kor,
 	    
-        /* Footer에 금액총합 구하기,
-         
-        "footerCallback":function(){
-            var api = this.api(), data;
-            var result = 0;
-            api.column(7, {search:'applied'}).data().each(function(data,index){
-                result += parseFloat(data);
-            });
-            $(api.column(3).footer()).html(result.toLocaleString()+'원');
-        },
-	 * filtered data 총합만 계산하도록 함.*/
-	    
-	/*
-        buttons:[{
-			extend:'csvHtml5',
-			text: 'Export CSV',
-			footer: true,
-			bom: true,
-			className: 'exportCSV'
-		}]
-	*/
-            initComplete: function() {
-                addFooter();
-	    }	    
+        initComplete: function() {
+		addFooter();
+	}	    
     });
 
     /* Column별 검색기능 추가 */
