@@ -1,16 +1,24 @@
-$(document).ready(function () {
+$(document).ready(function() {
     var table = $('#myTable').DataTable({
         ajax: {
             //'url':'https://SaintSilver.github.io/datatables-ex/MOCK_DATA.json', 
-            'url':'MOCK_DATA.json',
-            
+            'url': 'MOCK_DATA.json',
+
             //'type': 'POST',
-            'dataSrc':''
+            'dataSrc': ''
         },
+        select: true,
         responsive: true,
         orderMulti: true,
-        order : [[1, 'desc']],
-	
+        processing: true,
+        fixedHeader: false,
+        filter: true,
+        ordering: true,
+        pageLength: 25,
+        order: [
+            [0, 'asc']
+        ],
+
         columns: [
             {"data": "장"},
             {"data": "제목"},
@@ -23,12 +31,53 @@ $(document).ready(function () {
             {"data": "미디-ID"},
             {"data": "가사-ID"}
         ],
-	
+        columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                visible: true,
+                orderable: true,
+                searchable: true
+            },
+            {
+                targets: [5],
+                searchable: true
+            },
+            {
+                targets: '_all',
+                visible: false,
+                orderable: false,
+                searchable: false
+            }
+        ],
         language: lang_kor,
-	    
+
+        fnDrawCallback: function() {
+            $("input[type='search']").attr("id", "searchBox");
+        },
+
         initComplete: function() {
-		addFooter();
-	}	    
+            addFooter();
+            var cloneHeader = $('#myTable thead tr').clone().appendTo('#myTable thead');
+            cloneHeader.children('th').removeClass('sorting_asc');
+            cloneHeader.children('th').removeClass('sorting');
+            $('#myTable thead tr:eq(1) th').each(function(i) {
+                var title = $(this).text(); //<div class="ui left corner label"><i class="asterisk icon"></i></div>
+                $(this).html('<div class="ui mini left corner labeled input" style="width:100%"><input type="text" placeholder="' + title + '" class="column_search"/><div class="ui left corner label"><i class="search icon"></i></div></div>');
+                $('input', this).on('keyup change', function() {
+                    if (table.column(i).search() !== this.value) {
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                }); //on keypress 
+
+            }); //each          
+        } //initComplete    
+    }); //DataTable
+
+    $('#myTable tbody').on('click', 'tr', function() {
+        this_row = table.rows(this).data();
+        alert("All Data : " + table.row(this).data());
     });
 
     /* Column별 검색기능 추가 
@@ -42,7 +91,7 @@ $(document).ready(function () {
         table.column(colIndex).search(this.value).draw();
     });
     */
-	
+
     /* 날짜검색 이벤트 리바인딩 
     $('#myTable_filter').prepend('<input type="text" id="toDate" placeholder="yyyy-MM-dd"> ');
     $('#myTable_filter').prepend('<input type="text" id="fromDate" placeholder="yyyy-MM-dd">~');
@@ -52,7 +101,7 @@ $(document).ready(function () {
     */
 
 
-});
+}); //document Ready
 
 function addFooter() {
     $("#myTable").append('<tfoot></tfoot>');
@@ -112,4 +161,3 @@ var lang_kor = {
         sortDescending: ": 내림차순 정렬"
     }
 };
-
