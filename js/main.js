@@ -8,8 +8,6 @@ $('#demo').html('<table id="myTable" class="ui fixed blue single line selectable
             //'type': 'POST',
             'dataSrc':''
         },
-            columns: headers,
-
             columnDefs: [{
                     targets: [0, 1, 2, 3, 4],
                     visible: true,
