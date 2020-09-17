@@ -1,7 +1,9 @@
 $(document).ready(function () {
     var table = $('#myTable').DataTable({
         ajax: {
-            'url':'MOCK_DATA.json', 
+            //'url':'https://SaintSilver.github.io/datatables-ex/MOCK_DATA.json', 
+            'url':'https://ccmhymn.github.io/sheet/MOCK_DATA.json',
+            
             //'type': 'POST',
             'dataSrc':''
         },
@@ -10,14 +12,16 @@ $(document).ready(function () {
         order : [[1, 'desc']],
 	
         columns: [
-            {"data": "id"},
-            {"data": "name"},
-            {"data": "last_name"}, 
-            {"data": "email"}, 
-            {"data": "gender"}, 
-            {"data": "date"},
-            {"data": "ip_address"},
-            {"data": "money"}
+            {"data": "장"},
+            {"data": "제목"},
+            {"data": "분류"}, 
+            {"data": "코드"}, 
+            {"data": "박자"}, 
+            {"data": "Trim가사"},
+            {"data": "Full가사"}, 
+            {"data": "악보-ID"},
+            {"data": "미디-ID"},
+            {"data": "가사-ID"}
         ],
 	
         language: lang_kor,
@@ -108,3 +112,4 @@ var lang_kor = {
         sortDescending: ": 내림차순 정렬"
     }
 };
+
