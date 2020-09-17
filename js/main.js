@@ -69,12 +69,13 @@ $(document).ready(function () {
         table.column(colIndex).search(this.value).draw();
     });
 
-    /* 날짜검색 이벤트 리바인딩 */
+    /* 날짜검색 이벤트 리바인딩 
     $('#myTable_filter').prepend('<input type="text" id="toDate" placeholder="yyyy-MM-dd"> ');
     $('#myTable_filter').prepend('<input type="text" id="fromDate" placeholder="yyyy-MM-dd">~');
     $('#toDate, #fromDate').unbind().bind('keyup',function(){
         table.draw();
-    })
+    });
+    */
 
 
 });
