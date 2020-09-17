@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-	/*
     $.fn.dataTable.ext.search.push(
         function(settings, data, dataIndex){
             var min = Date.parse($('#fromDate').val());
@@ -16,7 +15,6 @@ $(document).ready(function () {
             return false;
         }
     )
-    */
 
     var table = $('#myTable').DataTable({
         ajax: {
@@ -34,10 +32,20 @@ $(document).ready(function () {
             {"data": "email"}, 
             {"data": "gender"}, 
             {"data": "date"},
-            {"data": "ip_address"},
-            {"data": "money"}
+            {"data": "ip_address",
+                "render": function(data, type, row){
+                    /*
+                     * 다른 column의 값을 다루고 싶을 땐
+                     * row['COLUMN명'] 으로 꺼내쓸 수 있다.
+                     */
+                    if(type=='display'){
+                        data = '<a href="'+ data + '">' + data + '</a>';
+                    }
+                    return data;
+            }},
+            {"data":"money"}
         ],
-	    language: lang_kor,
+        language: lang_kor,
         },
         /* Footer에 금액총합 구하기,
          * filtered data 총합만 계산하도록 함.*/
@@ -49,7 +57,14 @@ $(document).ready(function () {
             });
             $(api.column(3).footer()).html(result.toLocaleString()+'원');
         },
-        dom : 'Blfrtip'
+        dom : 'Blfrtip',
+        buttons:[{
+			extend:'csvHtml5',
+			text: 'Export CSV',
+			footer: true,
+			bom: true,
+			className: 'exportCSV'
+		}]
     });
 
     /* Column별 검색기능 추가 */
@@ -72,7 +87,6 @@ $(document).ready(function () {
 
 
 });
-
 
 // DataTables Default
 var lang_eng = {
