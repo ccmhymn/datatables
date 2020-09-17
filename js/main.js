@@ -11,7 +11,7 @@ $(document).ready(function () {
 	
         columns: [
 	    {"data": "id"},	
-            {"data": "이름"},
+            {"data": "name"},
             {"data": "last_name"},
             {"data": "email"}, 
             {"data": "gender"}, 
