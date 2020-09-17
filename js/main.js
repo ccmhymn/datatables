@@ -47,20 +47,7 @@ $(document).ready(function () {
             }},
             {"data":"money"}
         ],
-        "language": {
-            "emptyTable": "데이터가 없어요.",
-            "lengthMenu": "페이지당 _MENU_ 개씩 보기",
-            "info": "현재 _START_ - _END_ / _TOTAL_건",
-            "infoEmpty": "데이터 없음",
-            "infoFiltered": "( _MAX_건의 데이터에서 필터링됨 )",
-            "search": "에서 검색: ",
-            "zeroRecords": "일치하는 데이터가 없어요.",
-            "loadingRecords": "로딩중...",
-            "processing":     "잠시만 기다려 주세요...",
-            "paginate": {
-                "next": "다음",
-                "previous": "이전"
-            }
+	    language: lang_kor,
         },
         /* Footer에 금액총합 구하기,
          * filtered data 총합만 계산하도록 함.*/
@@ -102,3 +89,58 @@ $(document).ready(function () {
 
 
 });
+
+
+// DataTables Default
+var lang_eng = {
+    decimal: "",
+    emptyTable: "No data available in table",
+    info: "Showing _START_ to _END_ of _TOTAL_ entries",
+    infoEmpty: "Showing 0 to 0 of 0 entries",
+    infoFiltered: "(filtered from _MAX_ total entries)",
+    infoPostFix: "",
+    thousands: ",",
+    lengthMenu: "Show _MENU_ entries",
+    loadingRecords: "Loading...",
+    processing: "Processing...",
+    search: "Search : ",
+    zeroRecords: "No matching records found",
+    paginate: {
+        first: "First",
+        last: "Last",
+        next: "Next",
+        previous: "Previous"
+    },
+    aria: {
+        sortAscending: " :  activate to sort column ascending",
+        sortDescending: " :  activate to sort column descending"
+    }
+};
+
+
+
+// Korean
+var lang_kor = {
+    decimal: "",
+    emptyTable: "데이터가 없습니다.",
+    info: "_TOTAL_ 개 항목 중 _START_-_END_ 표시",
+    infoEmpty: "전체 0 개 항목 중 0 ~ 0 개 보기",
+    infoFiltered: "(총 _MAX_ 개 항목에서 필터링 됨)",
+    infoPostFix: "",
+    thousands: ",",
+    lengthMenu: " _MENU_ 개씩 보기",
+    loadingRecords: "로딩중...",
+    processing: "처리중...",
+    search: "전체검색:",
+    zeroRecords: "검색된 데이터가 없습니다.",
+    paginate: {
+        first: "처음",
+        last: "마지막",
+        next: "다음",
+        previous: "이전"
+    },
+    aria: {
+        sortAscending: ": 오름차순 정렬",
+        sortDescending: ": 내림차순 정렬"
+    }
+};
