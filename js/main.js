@@ -47,8 +47,9 @@ $(document).ready(function () {
             });
             $(api.column(3).footer()).html(result.toLocaleString()+'원');
         },
-	 * filtered data 총합만 계산하도록 함.*/   
-        dom : 'Blfrtip',
+	 * filtered data 총합만 계산하도록 함.*/
+	    
+	/*
         buttons:[{
 			extend:'csvHtml5',
 			text: 'Export CSV',
@@ -56,6 +57,8 @@ $(document).ready(function () {
 			bom: true,
 			className: 'exportCSV'
 		}]
+	*/
+        dom : 'Blfrtip',	    
     });
 
     /* Column별 검색기능 추가 */
