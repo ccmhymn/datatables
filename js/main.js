@@ -87,6 +87,7 @@ $(document).ready(function () {
 });
 
 function addFooter() {
+	alert("addFooter");
     $("#myTable").append('<tfoot></tfoot>');
     var cloneFooter = $("#myTable thead tr").clone().appendTo($("#myTable tfoot"));
 }
