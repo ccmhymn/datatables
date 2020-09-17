@@ -34,7 +34,7 @@ var table = $('#myTable').DataTable( {
             {"data": "date"},
             {"data": "ip_address"},
             {"data":"money"}
-        ]
+        ],
      dom : 'Blfrtip',
     
 } );
