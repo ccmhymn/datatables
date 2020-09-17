@@ -8,6 +8,7 @@ $(document).ready(function () {
         responsive: true,
         orderMulti: true,
         order : [[1, 'desc']],
+	/*
         columns: [
             {"data": "id"},
             {"data": "first_name"},
@@ -18,6 +19,7 @@ $(document).ready(function () {
             {"data": "ip_address"},
             {"data": "money"}
         ],
+	*/
         language: lang_kor,
 	    
         initComplete: function() {
