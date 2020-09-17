@@ -10,15 +10,16 @@ $(document).ready(function () {
         order : [[1, 'desc']],
 	
         columns: [
-	    {"data": "money"},	
-            {"data": "id"},
-            {"data": "first_name"},
-            {"data": "last_name"}, 
-            {"data": "email"}, 
-            {"data": "gender"}, 
-            {"data": "date"},
-            {"data": "ip_address"}
-
+	    {"data": "장"},	
+            {"data": "제목"},
+            {"data": "분류"},
+            {"data": "코드"}, 
+            {"data": "박자"}, 
+            {"data": "Trim가사"}, 
+            {"data": "Full가사"},
+            {"data": "악보-ID"},
+            {"data": "미디-ID"},
+            {"data": "가사-ID"}
         ],
 	
         language: lang_kor,
