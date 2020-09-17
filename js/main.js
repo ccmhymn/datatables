@@ -9,7 +9,7 @@ $(document).ready(function () {
         orderMulti: true,
         order : [[1, 'desc']],
         columns: [
-            {"data": "ids"},
+            {"data": "id"},
             {"data": "first_name"},
             {"data": "last_name"}, 
             {"data": "email"}, 
