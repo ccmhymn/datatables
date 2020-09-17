@@ -58,6 +58,9 @@ $(document).ready(function () {
 			className: 'exportCSV'
 		}]
 	*/
+            initComplete: function() {
+                addFooter();
+	    },
         dom : 'Blfrtip',	    
     });
 
@@ -82,6 +85,11 @@ $(document).ready(function () {
 
 
 });
+
+function addFooter() {
+    $("#myTable").append('<tfoot></tfoot>');
+    var cloneFooter = $("#myTable thead tr").clone().appendTo($("#myTable tfoot"));
+}
 
 // DataTables Default
 var lang_eng = {
