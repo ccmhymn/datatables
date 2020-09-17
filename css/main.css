@@ -1,12 +1,12 @@
 /* CUSTOM STYLE */
 
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 
 body,
 select,
 input {
-   font-family: 'Do Hyeon', sans-serif;
+   font-family: 'Nanum Gothic', sans-serif;
 }
 
 .wrap {
