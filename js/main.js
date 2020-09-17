@@ -25,7 +25,7 @@ $(document).ready(function () {
 	}	    
     });
 
-    /* Column별 검색기능 추가 */
+    /* Column별 검색기능 추가 
     $('#myTable_filter').prepend('<select id="select"></select>');
     $('#myTable > thead > tr').children().each(function (indexInArray, valueOfElement) { 
         $('#select').append('<option>'+valueOfElement.innerHTML+'</option>');
@@ -35,7 +35,8 @@ $(document).ready(function () {
         var colIndex = document.querySelector('#select').selectedIndex;
         table.column(colIndex).search(this.value).draw();
     });
-
+    */
+	
     /* 날짜검색 이벤트 리바인딩 
     $('#myTable_filter').prepend('<input type="text" id="toDate" placeholder="yyyy-MM-dd"> ');
     $('#myTable_filter').prepend('<input type="text" id="fromDate" placeholder="yyyy-MM-dd">~');
