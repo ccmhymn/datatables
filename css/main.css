@@ -5,7 +5,9 @@
 
 body,
 select,
-input {
+input,
+div,
+table, tr, td, th {
    font-family: 'Nanum Gothic', sans-serif;
 }
 
