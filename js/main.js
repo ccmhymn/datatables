@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-$('#demo').html('<table id="example" class="ui fixed blue single line selectable table responsive nowrap unstackable" style="width:100%;"></table>');
+$('#demo').html('<table id="myTable" class="ui fixed blue single line selectable table responsive nowrap unstackable" style="width:100%;"></table>');
 	
     var table = $('#myTable').DataTable({
         ajax: {
