@@ -1,2 +1,4 @@
-[{"id":1,"이름":"Mariele","last_name":"Mintram","email":"mmintram0@cbsnews.com","gender":"Female","date":"2018-03-18","ip_address":"110.1.138.115","money":"50252.57"},
-{"id":2,"이름":"Creight","last_name":"Coucher","email":"ccoucher1@google.it","gender":"Male","date":"2017-11-18","ip_address":"7.146.154.113","money":"56909.08"},
+[
+  {"id":1,"이름":"Mariele","last_name":"Mintram","email":"mmintram0@cbsnews.com","gender":"Female","date":"2018-03-18","ip_address":"110.1.138.115","money":"50252.57"},
+  {"id":2,"이름":"Creight","last_name":"Coucher","email":"ccoucher1@google.it","gender":"Male","date":"2017-11-18","ip_address":"7.146.154.113","money":"56909.08"},
+]
