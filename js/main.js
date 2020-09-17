@@ -2,7 +2,7 @@ $(document).ready(function () {
     var table = $('#myTable').DataTable({
         ajax: {
             //'url':'https://SaintSilver.github.io/datatables-ex/MOCK_DATA.json', 
-            'url':'https://ccmhymn.github.io/sheet/MOCK_DATA.json',
+            'url':'MOCK_DATA.json',
             
             //'type': 'POST',
             'dataSrc':''
