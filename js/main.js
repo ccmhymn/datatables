@@ -38,7 +38,7 @@ $(document).ready(function () {
         language: lang_kor,
 	    
         /* Footer에 금액총합 구하기,
-         * filtered data 총합만 계산하도록 함.*/
+         
         "footerCallback":function(){
             var api = this.api(), data;
             var result = 0;
@@ -47,6 +47,7 @@ $(document).ready(function () {
             });
             $(api.column(3).footer()).html(result.toLocaleString()+'원');
         },
+	 * filtered data 총합만 계산하도록 함.*/   
         dom : 'Blfrtip',
         buttons:[{
 			extend:'csvHtml5',
