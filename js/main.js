@@ -37,10 +37,10 @@ $('#demo').html('<table id="example" class="ui fixed blue single line selectable
             initComplete: function() {
                 addFooter(); //add footer from header
                 // https://datatables.net/extensions/fixedheader/examples/options/columnFiltering.html
-                var cloneHeader = $('#example thead tr').clone().appendTo('#example thead');
+                var cloneHeader = $('#myTable thead tr').clone().appendTo('#example thead');
                 cloneHeader.children('th').removeClass('sorting_asc');
                 cloneHeader.children('th').removeClass('sorting');
-                $('#example thead tr:eq(1) th').each(function(i) {
+                $('#myTable thead tr:eq(1) th').each(function(i) {
                     var title = $(this).text(); //<div class="ui left corner label"><i class="asterisk icon"></i></div>
                     $(this).html('<div class="ui mini left corner labeled input" style="width:100%"><input type="text" placeholder="' + title + '" class="column_search"/><div class="ui left corner label"><i class="search icon"></i></div></div>');
                     $('input', this).on('keyup change', function() {
@@ -79,7 +79,7 @@ $('#demo').html('<table id="example" class="ui fixed blue single line selectable
 });
 
 function addFooter() {
-    $("#example").append('<tfoot></tfoot>');
+    $("#myTable").append('<tfoot></tfoot>');
     var cloneFooter = $("#example thead tr").clone().appendTo($("#example tfoot"));
 }
 
