@@ -35,7 +35,7 @@ $(document).ready(function () {
             initComplete: function() {
                 addFooter(); //add footer from header
                 // https://datatables.net/extensions/fixedheader/examples/options/columnFiltering.html
-                var cloneHeader = $('#myTable thead tr').clone().appendTo('#example thead');
+                var cloneHeader = $('#myTable thead tr').clone().appendTo('#myTable thead');
                 cloneHeader.children('th').removeClass('sorting_asc');
                 cloneHeader.children('th').removeClass('sorting');
                 $('#myTable thead tr:eq(1) th').each(function(i) {
