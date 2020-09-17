@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+	/*
     $.fn.dataTable.ext.search.push(
         function(settings, data, dataIndex){
             var min = Date.parse($('#fromDate').val());
@@ -15,6 +16,7 @@ $(document).ready(function () {
             return false;
         }
     )
+    */
 
     var table = $('#myTable').DataTable({
         ajax: {
