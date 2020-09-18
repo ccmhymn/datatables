@@ -1,13 +1,11 @@
 $(document).ready(function() {
     var table = $('#myTable').DataTable({
         ajax: {
-            //'url':'https://SaintSilver.github.io/datatables-ex/MOCK_DATA.json', 
-            'url': 'MOCK_DATA.json',
-
+            'url': 'https://ccmhymn.github.io/sheet/MOCK_DATA.json',
             //'type': 'POST',
             'dataSrc': ''
         },
-        select: true,
+        select: false,
         responsive: true,
         orderMulti: true,
         processing: true,
@@ -19,7 +17,8 @@ $(document).ready(function() {
             [0, 'asc']
         ],
 
-        columns: [
+
+        columns: [{
             {"data": "장"},
             {"data": "제목"},
             {"data": "분류"}, 
@@ -31,8 +30,9 @@ $(document).ready(function() {
             {"data": "미디-ID"},
             {"data": "가사-ID"}
         ],
+
         columnDefs: [{
-                targets: [0, 1, 2, 3, 4],
+                targets: [0, 1, 2, 3, 4, 5],
                 visible: true,
                 orderable: true,
                 searchable: true
@@ -75,10 +75,32 @@ $(document).ready(function() {
         } //initComplete    
     }); //DataTable
 
+    // Click Row Data
     $('#myTable tbody').on('click', 'tr', function() {
-        this_row = table.rows(this).data();
-        alert("All Data : " + table.row(this).data());
+        var data = table.row(this).data();
+        //var sJson = JSON.stringify(data);
+        //$('#rowData').html( "All Data : "+sJson);
+        alert('You clicked on ' + data['Full가사'] + '\'s row');
+        var simpleTitle = data['제목'];
+        var title = data['장'] + ". " + data['제목'] + " | " + data['분류'] + " | " + data['코드'] + " | " + data['박자'];
+        var fullText = data['Full가사']; // 가사전체
+        var imgUrl = "https://drive.google.com/uc?id=" + data['악보-ID']; // 이미지 다이렉트 링크
+        var midiUrl = "https://drive.google.com/uc?export=download&id=" + data['미디-ID']; // 미디 다운로드 링크
+        var textUrl = "https://drive.google.com/file/d/" + data['가사-ID'] + "/preview"; // 가사 미리보기 링크
+        var youtubeUrl = "https://www.youtube.com/results?search_query=" + simpleTitle;
+
+        $('#title').html(title);
+        $('#preview').attr('src', imgUrl);
+        $('#sheetImg').attr('href', imgUrl);
+        $('#youtubeLink').attr('href', youtubeUrl);
+        $('#fullText').html('<div class="ui top right attached label">가사</div>' + fullText);
+        $('#iframeText').attr('src', textUrl);
+        //alert(simpleTitle + fullText + textUrl + youtubeUrl);
+
+
+
     });
+    // Click Row Data
 
     /* Column별 검색기능 추가 
     $('#myTable_filter').prepend('<select id="select"></select>');
@@ -102,6 +124,20 @@ $(document).ready(function() {
 
 
 }); //document Ready
+
+
+// create table headers
+function cHeader(r) {
+    var jArray = [];
+    for (var i in r[0]) {
+        var jobj = new Object();
+        jobj.title = r[0][i];
+        jobj.targets = i;
+        jArray.push(jobj);
+    }
+    // var sJson = JSON.stringify(jArray);
+    return jArray;
+}
 
 function addFooter() {
     $("#myTable").append('<tfoot></tfoot>');
