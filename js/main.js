@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var table = $('#myTable').DataTable({
         ajax: {
-            'url': 'https://ccmhymn.github.io/sheet/MOCK_DATA.json',
+            'url': 'MOCK_DATA.json',
             //'type': 'POST',
             'dataSrc': ''
         },
