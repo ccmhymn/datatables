@@ -96,7 +96,7 @@ $(document).ready(function() {
             $('#rowData').append("<br/>" + textUrl + "<br/>" + "<img src='" + imgUrl + "'/>");
           
             // Get Text from .txt file
-            $.get("textUrl", function(data) {
+            $.get(textUrl, function(data) {
               document.getElementById("output").innerText=data;
             });
 
