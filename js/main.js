@@ -93,7 +93,7 @@ $(document).ready(function() {
             $('#fullText').html('<div class="ui top right attached label">가사</div>' + fullText);
             $('#iframeText').attr('src', textUrl);
           
-            $('#rowData').append(imgUrl + "<img src='" + imgUrl + "'/>");
+            $('#rowData').append("<br/>" + textUrl + "<br/>" + "<img src='" + imgUrl + "'/>");
           
             // Get Text from .txt file
             $.get("textUrl", function(data) {
