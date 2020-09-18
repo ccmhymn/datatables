@@ -7,8 +7,11 @@ body,
 select,
 input,
 div,
-table, tr, td, th {
-   font-family: 'Nanum Gothic', sans-serif;
+table,
+tr,
+td,
+th {
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 .wrap {
@@ -56,22 +59,22 @@ table.dataTable.display tbody tr:hover {
 }
 */
 /* EXCEL 버튼 */
-.exportCSV{
-	margin-right: 5px;
-	text-align: center;
-	border: 1px solid white;
-	transition: all 0.15s;
-	background-color: #00695C;
-	padding: 5px 3px;
-	color: white;
+.exportCSV {
+    margin-right: 5px;
+    text-align: center;
+    border: 1px solid white;
+    transition: all 0.15s;
+    background-color: #00695C;
+    padding: 5px 3px;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.exportCSV:hover{
-	background-color: transparent;
-	border: 1px solid gray;
-	color: black;
+.exportCSV:hover {
+    background-color: transparent;
+    border: 1px solid gray;
+    color: black;
 }
 
 /*******************/
@@ -108,4 +111,3 @@ th {
         width: 100%
     }
 }
-
