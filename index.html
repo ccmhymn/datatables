@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sheet Misic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<!--
     <link rel="stylesheet" type="text/css" href="vendor/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="vendor/css/responsive.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -16,13 +16,33 @@
     <script src="vendor/js/dataTables.responsive.min.js"></script>
     <script src="vendor/js/dataTables.buttons.min.js"></script>
 	<script src="vendor/js/buttons.html5.min.js"></script>
+-->
+    <!-- Semantic UI class="ui celled table"-->
+    <script src="//code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.21/js/dataTables.semanticui.min.js"></script>
+    <script src="//cdn.datatables.net/fixedheader/3.1.7/js/fixedHeader.semanticui.min.js"></script>
+    <script src="//cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+    <script src="//datatables.net/release-datatables/extensions/FixedColumns/js/dataTables.fixedColumns.js"></script>
+
+    <!-- Midi Player -->
+    <script src='https://surikov.github.io/webaudiofont/npm/dist/WebAudioFontPlayer.js'></script>
+    <script src='https://surikov.github.io/webaudiofont/examples/MIDIFile.js'></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/dataTables.semanticui.min.css" />
+    <link rel="stylesheet" href="//cdn.datatables.net/fixedheader/3.1.7/css/fixedHeader.semanticui.min.css" />
+
+	
     <script src="js/main.js"></script>
 </head>
 
 <body>
-    <div class="wrap">
-        <h1>HymnCCM-5</h1>
-        <table id="myTable" class="display selectable table unstackable" style="width:100%;">
+  <div id="rowData" class="ui segment"></div>
+    <div class="ui">
+        <h1>Hymn</h1>
+        <table id="myTable" class="ui fixed blue single line selectable table responsive nowrap unstackable" style="width:100%;">
             <thead>
                 <tr>
                     <th>장</th>
@@ -30,15 +50,10 @@
                     <th>분류</th>
                     <th data-orderable="false">코드</th>
                     <th data-orderable="false">박자</th>
-                    <th>Trim가사</th>
-                    <th data-orderable="false">Full가사</th>
-                    <th>악보</th>
-                    <th>미디</th>
-                    <th>가사</th>                  
+                    <th data-orderable="false">전체가사</th>                 
                 </tr>
             </thead>
         </table>
     </div>
 </body>
-
 </html>
