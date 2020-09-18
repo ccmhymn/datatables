@@ -18,7 +18,7 @@ $(document).ready(function() {
         ],
 
 
-        columns: [{
+        columns: [
             {"data": "장"},
             {"data": "제목"},
             {"data": "분류"}, 
