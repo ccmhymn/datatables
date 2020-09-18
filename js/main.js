@@ -81,9 +81,9 @@ $(document).ready(function() {
             var simpleTitle = data['title'];
             var title = data['no'] + ". " + data['title'] + " | " + data['category'] + " | " + data['chord'] + " | " + data['beat'];
             var fullText = data['full_lyrics']; //가사전체
-            var imgUrl = "asset/hymn/img/" + data['img']; // 이미지 다이렉트 링크
-            var midiUrl = "asset/hymn/mid/" + data['midi']; // 미디 다운로드 링크
-            var textUrl = "asset/hymn/lyrics/" + data['txt']; // 가사 미리보기 링크
+            var imgUrl = "/asset/hymn/img/" + data['img']; // 이미지 다이렉트 링크
+            var midiUrl = "/asset/hymn/mid/" + data['midi']; // 미디 다운로드 링크
+            var textUrl = "/asset/hymn/lyrics/" + data['txt']; // 가사 미리보기 링크
             var youtubeUrl = "https://www.youtube.com/results?search_query=" + simpleTitle;
 
             $('#title').html(title);
@@ -93,9 +93,12 @@ $(document).ready(function() {
             $('#fullText').html('<div class="ui top right attached label">가사</div>' + fullText);
             $('#iframeText').attr('src', textUrl);
           
-            $('#rowData').append("<br/><img src='" + imgUrl + "'/>");
-
-
+            $('#rowData').append(imgUrl + "<img src='" + imgUrl + "'/>");
+          
+            // Get Text from .txt file
+            $.get("textUrl", function(data) {
+              document.getElementById("output").innerText=data;
+            });
 
         });
         // Click Row Data
@@ -141,6 +144,20 @@ function addFooter() {
     $("#myTable").append('<tfoot></tfoot>');
     var cloneFooter = $("#myTable thead tr").clone().appendTo($("#myTable tfoot"));
 }
+
+// Read TXT
+function sendXHR(type, url, data, callback) {
+     var newXHR = new XMLHttpRequest() || new window.ActiveXObject("Microsoft.XMLHTTP");
+     newXHR.open(type, url, true);
+     newXHR.send(data);
+     newXHR.onreadystatechange = function() {
+       if (this.status === 200 && this.readyState === 4) {
+         callback(this.response);
+       }
+     };
+}
+
+
 
 // DataTables Default
 var lang_eng = {
