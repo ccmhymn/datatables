@@ -74,21 +74,6 @@ table.dataTable.display tbody tr:hover {
 	color: black;
 }
 
-@media screen and (max-width: 640px) {
-
-    /* 검색창, 페이지당 select 등 input 관련 */
-    .dataTables_wrapper .dataTables_filter input,
-    select[name=myTable_length] {
-        padding: 0.2em;
-        width: 30%;
-    }
-
-    #select {
-        padding: 0.2em;
-        margin-right: 0.5em;
-    }
-}
-
 /*******************/
 
 .ui.table thead tr:first-child>th {
