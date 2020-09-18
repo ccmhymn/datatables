@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var table = $('#myTable').DataTable({
         ajax: {
-            'url': 'https://ccmhymn.github.io/sheet/MOCK_DATA.json',
+            'url': 'MOCK_DATA.json',
             //'type': 'POST',
             'dataSrc': ''
         },
@@ -23,16 +23,16 @@ columnDefs: [
 */
          
         columns: [
-            {"data": "장"},
-            {"data": "제목"},
-            {"data": "분류"}, 
-            {"data": "코드"}, 
-            {"data": "박자"}, 
-            {"data": "Trim가사"},
-            {"data": "Full가사"}, 
-            {"data": "악보-ID"},
-            {"data": "미디-ID"},
-            {"data": "가사-ID"}
+            {data: "장"},         
+            {data: "제목"},
+            {data: "분류"}, 
+            {data: "코드"}, 
+            {data: "박자"}, 
+            {data: "Full가사"},          
+            {data: "Trim가사"},
+            {data: "악보-ID"},
+            {data: "미디-ID"},
+            {data: "가사-ID"}
         ],
  
         columnDefs: [{
