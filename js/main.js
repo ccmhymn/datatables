@@ -1,14 +1,14 @@
 $(document).ready(function() {
     var table = $('#myTable').DataTable({
         ajax: {
-            'url': 'MOCK_DATA.json',
+            'url': 'hymn-data.json',
             //'type': 'POST',
             'dataSrc': ''
         },
         select: true,
         responsive: true,
         orderMulti: true,
-        processing: true,
+        processing: true, 
         fixedHeader: false,
         filter: true,
         ordering: true,
@@ -23,11 +23,11 @@ columnDefs: [
 */
          
         columns: [
-            {data: "장"},         
-            {data: "제목"},
-            {data: "분류"}, 
-            {data: "코드"}, 
-            {data: "박자"}, 
+            {data: "장", title: "장"},         
+            {data: "제목", title: "제목"},
+            {data: "분류", title: "분류"}, 
+            {data: "코드", title: "코드"}, 
+            {data: "박자", title: "박자"}, 
             {data: "Full가사"},          
             {data: "Trim가사"},
             {data: "악보-ID"},
@@ -36,7 +36,7 @@ columnDefs: [
         ],
  
         columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5],
+                targets: [0, 1, 2, 3, 4],
                 visible: true,
                 orderable: true,
                 searchable: true
