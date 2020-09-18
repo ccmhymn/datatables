@@ -78,8 +78,8 @@ $(document).ready(function() {
     // Click Row Data
     $('#myTable tbody').on('click', 'tr', function() {
         var data = table.row(this).data();
-        //var sJson = JSON.stringify(data);
-        //$('#rowData').html( "All Data : "+sJson);
+        var sJson = JSON.stringify(data);
+        $('#rowData').html( "All Data : "+sJson);
         alert('You clicked on ' + data['Full가사'] + '\'s row');
         var simpleTitle = data['제목'];
         var title = data['장'] + ". " + data['제목'] + " | " + data['분류'] + " | " + data['코드'] + " | " + data['박자'];
