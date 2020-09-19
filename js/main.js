@@ -72,10 +72,9 @@ $(document).ready(function() {
         // Click Row Data
         $('#myTable tbody').on('click', 'tr', function() {
             var data = table.row(this).data();
-            var sJson = JSON.stringify(data);
-          
-            $('#rowData').html("All Data : " + sJson);
-            alert(data['no'] + '장. ' + data['title'] + '를 클릭하셨습니다.');
+            //var sJson = JSON.stringify(data);
+            //$('#rowData').html("All Data : " + sJson);
+            //alert(data['no'] + '장. ' + data['title'] + '를 클릭하셨습니다.');
           
             var simpleTitle = data['title'];
             var title = data['no'] + ". " + data['title'] + " | " + data['category'] + " | " + data['chord'] + " | " + data['beat'];
@@ -89,14 +88,15 @@ $(document).ready(function() {
             $('#preview').attr('src', imgUrl);
             $('#sheetImg').attr('href', imgUrl);
             $('#youtubeLink').attr('href', youtubeUrl);
-            $('#fullText').html('<div class="ui top right attached label">가사</div>' + fullText);
-            $('#iframeText').attr('src', textUrl);
+            //$('#fullText').html('<div class="ui top right attached label">가사</div>' + fullText);
+            //$('#iframeText').attr('src', textUrl);
           
-            $('#rowData').append("<br/>" + textUrl + "<br/>" + "<img src='" + imgUrl + "'/>");
+            //$('#rowData').append("<br/>" + textUrl + "<br/>" + "<img src='" + imgUrl + "'/>");
           
             // Get Text from .txt file
             $.get(textUrl, function(data) {
-              document.getElementById("output").innerText=data;
+              $('#fullText').html('<div class="ui top right attached label">가사</div>' + data);
+              //document.getElementById("output").innerText=data;
             });
             // Modal => https://semantic-ui.com/modules/modal.html#/examples
             $('.ui.modal')
