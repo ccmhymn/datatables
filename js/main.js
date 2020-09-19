@@ -6,7 +6,7 @@ $(document).ready(function() {
         var table = $('#myTable').DataTable({
             data: data,
             select: true,
-            responsive: false,
+            responsive: true,
             orderMulti: true,
             processing: true,
             fixedHeader: true,
