@@ -95,7 +95,8 @@ $(document).ready(function() {
           
             // Get Text from .txt file
             $.get(textUrl, function(data) {
-              $('#fullText').html('<div class="ui top right attached label">가사</div>' + data);
+              $('#fullText').html('<div class="ui top right attached label">가사</div>');
+              $('#fullText').append(data);
               //document.getElementById("output").innerText=data;
             });
             // Modal => https://semantic-ui.com/modules/modal.html#/examples
