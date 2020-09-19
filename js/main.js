@@ -98,7 +98,30 @@ $(document).ready(function() {
             $.get(textUrl, function(data) {
               document.getElementById("output").innerText=data;
             });
+            // Modal => https://semantic-ui.com/modules/modal.html#/examples
+            $('.ui.modal')
+                .modal({
+                    closable: true,
+                    onHidden: function() {
+                        var enterKey = String.fromCharCode(13);
+                        $('.column_search').val(enterKey);
+                        $('.column_search').trigger(jQuery.Event('keyup', {
+                            keyCode: 13
+                        }));
+                        $('.dataTables_filter input').val(enterKey);
+                        $('.dataTables_filter input').trigger(jQuery.Event('keyup', {
+                            keyCode: 13
+                        }));
+                        if (audioContext != null) {
+                           audioContext.close();
+                        }
 
+                        return false;
+                    },
+                    onApprove: function() {}
+                })
+                .modal('show');
+            // Modal
         });
         // Click Row Data
 
