@@ -14,9 +14,37 @@ th {
     font-family: 'Nanum Gothic', sans-serif;
 }
 
-.wrap {
-    width: 100%;
-    margin: 10px auto;
+.ui.table thead tr:first-child>th {
+    position: sticky !important;
+    top: 0;
+    z-index: 1;
+}
+
+
+th {
+    position: sticky !important;
+    top: 0;
+    z-index: 2;
+}
+
+#searchBox {
+    width: 350px;
+}
+
+.blurring.dimmable.image {
+    width: 50%
+}
+
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+    #searchBox {
+        width: 100%;
+    }
+
+    .blurring.dimmable.image {
+        width: 100%
+    }
 }
 
 /* 검색창, 페이지당 select 등 input 관련 
@@ -58,56 +86,3 @@ table.dataTable.display tbody tr:hover {
     background: #E1F5FE;
 }
 */
-/* EXCEL 버튼 */
-.exportCSV {
-    margin-right: 5px;
-    text-align: center;
-    border: 1px solid white;
-    transition: all 0.15s;
-    background-color: #00695C;
-    padding: 5px 3px;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.exportCSV:hover {
-    background-color: transparent;
-    border: 1px solid gray;
-    color: black;
-}
-
-/*******************/
-
-.ui.table thead tr:first-child>th {
-    position: sticky !important;
-    top: 0;
-    z-index: 1;
-}
-
-
-th {
-    position: sticky !important;
-    top: 0;
-    z-index: 2;
-}
-
-#searchBox {
-    width: 350px;
-}
-
-.blurring.dimmable.image {
-    width: 50%
-}
-
-
-@media only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px) {
-    #searchBox {
-        width: 100%;
-    }
-
-    .blurring.dimmable.image {
-        width: 100%
-    }
-}
