@@ -1,3 +1,7 @@
+$('.dimmable.image').dimmer({
+    on: 'hover'
+});
+
 $(document).ready(function() {
 
     $.ajax({
