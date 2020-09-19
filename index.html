@@ -38,63 +38,19 @@
 </head>
 
 <body>
-    
+
     <!--script type='text/javascript' src='//www.midijs.net/lib/midi.js'></script>
     <div id="midi">
         <div onClick="MIDIjs.play('asset/hymn/mid/hymn001.mid');">Play MIDI</div>
         <div onClick="MIDIjs.stop();">Stop MIDI</div>
     </div-->
-    <div id="modalpop" class="ui modal">
-        <i class="close icon"></i>
-        <div class="header" id="title">
-            Title
-        </div>
-        <div class="image content">
-            <div class="blurring dimmable image">
-                <div class="ui dimmer">
-                    <div class="content">
-                        <div class="center">
-                            <div class="ui inverted button"><a id="sheetImg" href="" target="_blank">크게 보기</a></div>
-                        </div>
-                    </div>
-                </div>
-                <img id="preview" src="" width="100%" alt="악보이미지">
-            </div>
-
-            <div class="description" style="width:50%">
-                <div class="ui header">
-                    <a id="youtubeLink" href="" target="_blank">
-                        <i class="youtube red icon"></i>
-                        <div class="content">Youtube 검색</div>
-                    </a>
-                </div>
-                <div>
-                    <!--iframe id="iframeText" src='https://drive.google.com/file/d/1ZT37hYvz6hZASs6M6E64d-5TavyEKXC6/preview' height="300px" width="100%" style="border:0px #ffffff none;" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" allowfullscreen></iframe-->
-                    <div id="fullText" class="ui segment"></div>
-                </div>
-                <div id='cntls' class="ui segment"></div>
-            </div>
-        </div>
-        <div class="actions">
-
-            <!--div class="ui black deny button">
-                아니오
-            </div-->
-            
-            <div class="ui positive right labeled icon button">
-                창닫기
-                <i class="checkmark icon"></i>
-            </div>
-            
-        </div>
-
-    </div>
-    <!-- modal -->      
     <div class="ui container">
-      <!--div><object data="asset/hymn/lyrics/038.txt"></object></div-->
-      <div id="output">output</div>
+
+        <!--div><object data="asset/hymn/lyrics/038.txt"></object></div-->
+
         <div class="ui header">Hymn Ver2.0</div>
-        <div id="rowData" class="ui segment"></div>
+        <div id="output">output</div>
+        <div id="rowData"></div>
         <table id="myTable" class="ui fixed blue single line selectable table responsive nowrap unstackable" style="width:100%;">
             <thead>
                 <tr>
@@ -107,6 +63,54 @@
                 </tr>
             </thead>
         </table>
+        <!-- modal -->
+        <div id="modalpop" class="ui modal">
+            <i class="close icon"></i>
+            <div class="header" id="title">
+                Title
+            </div>
+            <div class="image content">
+                <div class="blurring dimmable image">
+                    <div class="ui dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div class="ui inverted button"><a id="sheetImg" href="" target="_blank">크게 보기</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <img id="preview" src="" width="100%" alt="악보이미지">
+                </div>
+
+                <div class="description" style="width:50%">
+                    <div class="ui header">
+                        <a id="youtubeLink" href="" target="_blank">
+                            <i class="youtube red icon"></i>
+                            <div class="content">Youtube 검색</div>
+                        </a>
+                    </div>
+                    <div>
+                        <!--iframe id="iframeText" src='https://drive.google.com/file/d/1ZT37hYvz6hZASs6M6E64d-5TavyEKXC6/preview' height="300px" width="100%" style="border:0px #ffffff none;" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" allowfullscreen></iframe-->
+                        <div id="fullText" class="ui segment"></div>
+                    </div>
+                    <div id='cntls' class="ui segment"></div>
+                </div>
+            </div>
+            <div class="actions">
+
+                <!--div class="ui black deny button">
+                아니오
+            </div-->
+
+                <div class="ui positive right labeled icon button">
+                    창닫기
+                    <i class="checkmark icon"></i>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- modal -->
+
     </div>
 </body>
 
