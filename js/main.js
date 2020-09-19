@@ -9,7 +9,7 @@ $(document).ready(function() {
             responsive: false,
             orderMulti: true,
             processing: true,
-            fixedHeader: false,
+            fixedHeader: true,
             filter: true,
             ordering: true,
             pageLength: 25,
