@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
+.scrolling.undetached.dimmable.dimmed > .dimmer {
+    overflow: auto !important;
+}
+
 body,
 h1,h2,h3,
 input,
@@ -41,13 +45,15 @@ th {
 
 @media only screen and (max-width: 760px) {
     #searchBox {
-        width: 10%;
+        width: 100%;
     }
 
     .blurring.dimmable.image {
         width: 100%;
-        overflow: scroll !important;
     }
+    .image.content {
+        overflow: auto !important;
+    }  
 }
 
 /* 검색창, 페이지당 select 등 input 관련 
@@ -89,4 +95,3 @@ table.dataTable.display tbody tr:hover {
     background: #E1F5FE;
 }
 */
-
