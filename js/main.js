@@ -1,11 +1,12 @@
 $(document).ready(function() {
 
-    $('.dimmable.image').dimmer({
+$('.dimmable.image').dimmer({
     on: 'hover'
-    });
-    
+});  
+  
+  
     $.ajax({
-        'url': 'hymn-data.json'
+        'url': 'https://ccmhymn.github.io/sheet/hymn-data.json'
     }).done(function(data) {
         var table = $('#myTable').DataTable({
             data: data,
@@ -30,7 +31,7 @@ $(document).ready(function() {
             {data: "full_lyrics"},
             {data: "img"},
             {data: "midi"},
-            {data: "txt"}
+            {data: "txt"} 
         ],
 
             columnDefs: [{
@@ -87,9 +88,9 @@ $(document).ready(function() {
             var simpleTitle = data['title'];
             var title = data['no'] + ". " + data['title'] + " | " + data['category'] + " | " + data['chord'] + " | " + data['beat'];
             var fullText = data['full_lyrics']; //가사전체
-            var imgUrl = "asset/hymn/img/" + data['img']; // 이미지 다이렉트 링크
-            var midiUrl = "asset/hymn/mid/" + data['midi']; // 미디 다운로드 링크
-            var textUrl = "asset/hymn/lyrics/" + data['txt']; // 가사 미리보기 링크
+            var imgUrl = "https://ccmhymn.github.io/sheet/asset/hymn/img/" + data['img']; // 이미지 다이렉트 링크
+            var midiUrl = "https://ccmhymn.github.io/sheet/asset/hymn/mid/" + data['midi']; // 미디 다운로드 링크
+            var textUrl = "https://ccmhymn.github.io/sheet/asset/hymn/lyrics/" + data['txt']; // 가사 미리보기 링크
             var youtubeUrl = "https://www.youtube.com/results?search_query=" + simpleTitle;
 
             $('#title').html(title);
@@ -105,8 +106,12 @@ $(document).ready(function() {
             $.get(textUrl, function(data) {
               $('#fullText').html('<div class="ui top right attached label">가사</div><pre>' + data +'</pre>');
               //$('#fullText').append(data);
+              //document.getElementById("output").innerText=data;
             });
             // Modal => https://semantic-ui.com/modules/modal.html#/examples
+          
+            handleExample(midiUrl);
+          
             $('.ui.modal')
                 .modal({
                     closable: true,
@@ -132,6 +137,9 @@ $(document).ready(function() {
             // Modal
         });
         // Click Row Data
+      
+        $('#dimmer').dimmer('hide'); //loading hide
+        $('#dimmer').remove(); //loading hide      
 
         /* Column별 검색기능 추가 
         $('#myTable_filter').prepend('<select id="select"></select>');
