@@ -3,7 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 .scrolling.undetached.dimmable.dimmed > .dimmer {
-    overflow: auto !important;
+    overflow: scroll !important;
+}
+
+.scrolling.undetached.dimmable.dimmed{
+    overflow: hidden !important;
 }
 
 body,
