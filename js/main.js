@@ -13,7 +13,7 @@ $('.dimmable.image').dimmer({
             responsive: false,
             orderMulti: true,
             processing: true,
-            fixedHeader: true,
+            fixedHeader: false,
             filter: true,
             ordering: true,
             pageLength: 25,
