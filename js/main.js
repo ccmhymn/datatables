@@ -40,6 +40,10 @@ $(document).ready(function() {
                     searchable: true
                 },
                 {
+                    targets: [5],
+                    searchable: true
+                },                         
+                {
                     targets: '_all',
                     visible: false,
                     orderable: false,
