@@ -31,18 +31,6 @@ th {
     top: 0;
     z-index: 2;
 }
-.ui.table thead tr:first-child>th {
-    position: sticky !important;
-    top: 0;
-    z-index: 1;
-}
-
-
-th {
-    position: sticky !important;
-    top: 0;
-    z-index: 2;
-}
 
 #searchBox {
     width: 350px;
