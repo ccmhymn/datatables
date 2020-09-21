@@ -2,10 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
-.scrolling.undetached.dimmable.dimmed > .dimmer {
-    overflow: scroll !important;
-}
-
 body,
 h1,h2,h3,
 input,
@@ -16,7 +12,8 @@ table,
 tr,
 td,
 th {
-    font-family: 'Nanum Gothic', sans-serif !important;
+
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 .ui.table thead tr:first-child>th {
@@ -32,23 +29,24 @@ th {
     z-index: 2;
 }
 
+
 #searchBox {
     width: 350px;
 }
 
 .blurring.dimmable.image {
-    width: 50%
+    width: 50%;
 }
 
 
-@media only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 760px) {
     #searchBox {
         width: 100%;
     }
 
     .blurring.dimmable.image {
-        width: 100%
+        width: 100%;
+        overflow: scroll !important;
     }
 }
 
@@ -91,3 +89,4 @@ table.dataTable.display tbody tr:hover {
     background: #E1F5FE;
 }
 */
+
