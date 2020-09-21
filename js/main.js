@@ -108,9 +108,8 @@ $('.dimmable.image').dimmer({
               //$('#fullText').append(data);
               //document.getElementById("output").innerText=data;
             });
+            
             // Modal => https://semantic-ui.com/modules/modal.html#/examples
-          
-            handleExample(midiUrl);
           
             $('.ui.modal')
                 .modal({
@@ -135,6 +134,7 @@ $('.dimmable.image').dimmer({
                 })
                 .modal('show');
             // Modal
+            handleExample(midiUrl);
         });
         // Click Row Data
       
