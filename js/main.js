@@ -92,6 +92,8 @@ $('.dimmable.image').dimmer({
             var midiUrl = "https://ccmhymn.github.io/sheet/asset/hymn/mid/" + data['midi']; // 미디 다운로드 링크
             var textUrl = "https://ccmhymn.github.io/sheet/asset/hymn/lyrics/" + data['txt']; // 가사 미리보기 링크
             var youtubeUrl = "https://www.youtube.com/results?search_query=" + simpleTitle;
+            
+                                handleExample(midiUrl);
 
             $('#title').html(title);
             $('#preview').attr('src', imgUrl);
@@ -137,7 +139,6 @@ $('.dimmable.image').dimmer({
                 })
                 .modal('show');
             // Modal
-            handleExample(midiUrl);
         });
         // Click Row Data
       
