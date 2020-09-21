@@ -41,7 +41,7 @@ th {
 
 @media only screen and (max-width: 760px) {
     #searchBox {
-        width: 100%;
+        width: 10%;
     }
 
     .blurring.dimmable.image {
