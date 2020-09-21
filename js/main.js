@@ -1,9 +1,9 @@
-$('.dimmable.image').dimmer({
-    on: 'hover'
-});
-
 $(document).ready(function() {
 
+    $('.dimmable.image').dimmer({
+    on: 'hover'
+    });
+    
     $.ajax({
         'url': 'hymn-data.json'
     }).done(function(data) {
