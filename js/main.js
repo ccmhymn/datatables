@@ -113,6 +113,9 @@ $('.dimmable.image').dimmer({
           
             $('.ui.modal')
                 .modal({
+                    onVisible: function () {
+                      $('.ui.modal').modal('refresh');
+                    },
                     closable: true,
                     onHidden: function() {
                         var enterKey = String.fromCharCode(13);
