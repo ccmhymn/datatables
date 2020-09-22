@@ -76,15 +76,31 @@
 
 
 
-
+                var counter = 0;
                 $('#add_tab').off('click').on('click', function() {
-
+                    counter++;
+                    //alert('counter : ' + counter);
                     var tabCounter = countTab();
                     if (tabCounter > 5) {
-                        //alert(tabCounter);
                         alert('탭 수는 5개를 넘을 수 없습니다');
                         return false;
                     }
+
+                    if (tabCounter <= 5 && counter > 5) {
+                        tabCounter = Math.floor(Math.random() * 10) + 1;
+                        //alert('tabCounter : ' + tabCounter);
+                    }
+
+                    if (tabCounter == 1) {color = "blue";}
+                    if (tabCounter == 2) {color = "green";}
+                    if (tabCounter == 3) {color = "yellow";}
+                    if (tabCounter == 4) {color = "orange";}
+                    if (tabCounter == 5) {color = "pink";}
+                    if (tabCounter == 6) {color = "olive";} 
+                    if (tabCounter == 7) {color = "teal";} 
+                    if (tabCounter == 8) {color = "violet";} 
+                    if (tabCounter == 9) {color = "brown";} 
+                    if (tabCounter == 10) {color = "puple";} 
 
 
                     // programmatically activating tab
@@ -96,6 +112,7 @@
                     var tabId = (new Date()).getTime();
                     $('#main-tabs').append('<a id="' + tabId + '">' + tabId + '</a>');
                     $('#' + tabId).addClass('item active');
+                    $('#' + tabId).addClass(color);
                     $('#' + tabId).attr('data-tab', tabId);
                     $('#' + tabId).append('&nbsp;<i class="small window close icon"></i>');
 
