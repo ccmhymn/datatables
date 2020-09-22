@@ -33,7 +33,7 @@
 </div>
 <script>
 $(document).ready(function() {
-
+/*
     $(".item").off('click').on('click', function() {
         $(".active").removeClass("active");
         $(this).addClass("active");
@@ -41,8 +41,9 @@ $(document).ready(function() {
         $(".tab.content").removeClass("active");
         $(".tab.content[data-tab=\"" + tab + "\"]").addClass("active");
     });
-
-
+*/
+    $('.ui.menu .item').tab({history:false});
+  
     $(".item > .close").off('click').on('click', function() {
         $(".active").removeClass("active");
         $(".tab.content").removeClass("active");
