@@ -79,7 +79,7 @@ $('.dimmable.image').dimmer({
         }); //DataTable
 
         // Click Row Data
-        $('#myTable tbody').on('click', 'tr', function() {
+        $('#myTable tbody').off().on('click', 'tr', function() {
             var data = table.row(this).data();
             //var sJson = JSON.stringify(data);
             //$('#rowData').html("All Data : " + sJson);
