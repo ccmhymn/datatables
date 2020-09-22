@@ -1,107 +1,110 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TEST</title>  
+    <title>TEST</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
     <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
 
 
 </head>
+
 <body>
-<div class="ui grid page">
+
     <div class="column">
         <div id="main-tabs" class="ui pointing secondary menu" id="tabsTwo">
             <a id="first" class="active red item" data-tab="first">Main</a>
             <a id="two" class="blue item" data-tab="second">Two&nbsp;<i class="small window close icon"></i></a>
             <a id="three" class="green item" data-tab="third">Three&nbsp;<i class="small window close icon"></i></a>
         </div>
-      <div id="main-content">
-        <div id="first" class="ui active tab content" data-tab="first">
-          <div class="ui button">탭추가</div>
+        <div id="main-content">
+            <div id="first" class="ui active tab content" data-tab="first">
+                <div class="ui button">Add Tab</div>
+            </div>
+            <div id="two" class="ui tab segment" data-tab="second">Second</div>
+            <div id="three" class="ui tab segment" data-tab="third">Third</div>
         </div>
-        <div id="two" class="ui tab segment" data-tab="second">Second</div>
-        <div id="three" class="ui tab segment" data-tab="third">Third</div>
-      </div>
     </div>
-  </main>
-</div>
-<script>
-$(document).ready(function() {
-/*
-    $(".item").off('click').on('click', function() {
-        $(".active").removeClass("active");
-        $(this).addClass("active");
-        var tab = $(this).attr("data-tab");
-        $(".tab.content").removeClass("active");
-        $(".tab.content[data-tab=\"" + tab + "\"]").addClass("active");
-    });
-*/
-    $('.ui.menu .item').tab({history:false});
-  
-    $(".item > .close").off('click').on('click', function() {
-        $(".active").removeClass("active");
-        $(".tab.content").removeClass("active");
-        var mId = $(this).closest('.item').attr('id');
-        var cId = 'r' + mId;
-        $('#' + mId).remove();
-        $('#' + cId).remove();
-        //alert(mId);
-        var tab = $(this).attr("data-tab");
-        $(".tab.content[data-tab=\"" + tab + "\"]").remove();
-        $("#first").addClass("active");
-        $(".tab.content[data-tab='first']").addClass("active");
-    });
+    <script>
+        $(document).ready(function() {
+            /*
+                $(".item").off('click').on('click', function() {
+                    $(".active").removeClass("active");
+                    $(this).addClass("active");
+                    var tab = $(this).attr("data-tab");
+                    $(".tab.content").removeClass("active");
+                    $(".tab.content[data-tab=\"" + tab + "\"]").addClass("active");
+                });
+            */
+            $('.ui.menu .item').tab({
+                history: false
+            });
+
+            $(".item > .close").off('click').on('click', function() {
+                $(".active").removeClass("active");
+                $(".tab.content").removeClass("active");
+                var mId = $(this).closest('.item').attr('id');
+                var cId = 'r' + mId;
+                $('#' + mId).remove();
+                $('#' + cId).remove();
+                //alert(mId);
+                var tab = $(this).attr("data-tab");
+                $(".tab.content[data-tab=\"" + tab + "\"]").remove();
+                $("#first").addClass("active");
+                $(".tab.content[data-tab='first']").addClass("active");
+            });
 
 
-    $('.ui.button').off('click').on('click', function() {
+            $('.ui.button').off('click').on('click', function() {
 
-        // programmatically activating tab
-        $(".active").removeClass("active");
-        $(this).addClass("active");
-        var tab = $(this).attr("data-tab");
-        $(".tab.content").removeClass("active");
+                // programmatically activating tab
+                $(".active").removeClass("active");
+                $(this).addClass("active");
+                var tab = $(this).attr("data-tab");
+                $(".tab.content").removeClass("active");
 
-        var tabId = (new Date()).getTime();
-        $('#main-tabs').append('<a id="' + tabId + '">' + tabId + '</a>');
-        $('#' + tabId).addClass('item active');
-        $('#' + tabId).attr('data-tab', tabId);
-        $('#' + tabId).append('&nbsp;<i class="small window close icon"></i>');
+                var tabId = (new Date()).getTime();
+                $('#main-tabs').append('<a id="' + tabId + '">' + tabId + '</a>');
+                $('#' + tabId).addClass('item active');
+                $('#' + tabId).attr('data-tab', tabId);
+                $('#' + tabId).append('&nbsp;<i class="small window close icon"></i>');
 
-        var resultId = 'r' + tabId;
-        $('#main-content').append('<div id="' + resultId + '"></div>');
-        $('#' + resultId).addClass('ui tab content');
-        $('#' + resultId).attr('data-tab', tabId);
-        $('#' + resultId).html('Contents : ' + resultId);
-
-
-        $('#result').addClass('item');
-        $('#result').attr('data-tab', 'tab-result');
-        $('#result').html('View Result');
+                var resultId = 'r' + tabId;
+                $('#main-content').append('<div id="' + resultId + '"></div>');
+                $('#' + resultId).addClass('ui tab content');
+                $('#' + resultId).attr('data-tab', tabId);
+                $('#' + resultId).html('Contents : ' + resultId);
 
 
-        $('.ui.menu .item').tab('change tab', tabId);
+                $('#result').addClass('item');
+                $('#result').attr('data-tab', 'tab-result');
+                $('#result').html('View Result');
 
-        $(".item > .close").off('click').on('click', function() {
-            $(".active").removeClass("active");
-            $(".tab.content").removeClass("active");
-            var mId = $(this).closest('.item').attr('id');
-            var cId = 'r' + mId;
-            //alert(mId);
-            $('#' + mId).remove();
-            $('#' + cId).remove();
-            $("#first").addClass("active");
-            $(".tab.content[data-tab='first']").addClass("active");
+
+                $('.ui.menu .item').tab('change tab', tabId);
+
+                $(".item > .close").off('click').on('click', function() {
+                    $(".active").removeClass("active");
+                    $(".tab.content").removeClass("active");
+                    var mId = $(this).closest('.item').attr('id');
+                    var cId = 'r' + mId;
+                    //alert(mId);
+                    $('#' + mId).remove();
+                    $('#' + cId).remove();
+                    $("#first").addClass("active");
+                    $(".tab.content[data-tab='first']").addClass("active");
+                });
+
+            });
+
         });
-
-    });
-
-});
-</script>
+    </script>
 </body>
+
 </html>
