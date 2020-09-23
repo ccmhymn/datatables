@@ -16,9 +16,8 @@
 </head>
 
 <body>
-
     <div id="add_tab" class="ui button">Add Tab</div>
-    <div id="remove_tab" class="ui button">Remove Tab</div>
+    <div id="first_tab" class="ui button">first Tab Id</div>
     <div class="column">
         <div id="main-tabs" class="ui pointing secondary menu" id="tabsTwo">
             <a id="first" class="active red item" data-tab="first">Main</a>
@@ -35,29 +34,106 @@
     </div>
     <script>
         $(document).ready(function() {
-                /*
-                    $(".item").off('click').on('click', function() {
-                        $(".active").removeClass("active");
-                        $(this).addClass("active");
-                        var tab = $(this).attr("data-tab");
-                        $(".tab.content").removeClass("active");
-                        $(".tab.content[data-tab=\"" + tab + "\"]").addClass("active");
-                    });
-                */
-                $('.ui.menu .item').tab({
-                    history: false,
-                    alwaysRefresh: true
+            /*
+                $(".item").off('click').on('click', function() {
+                    $(".active").removeClass("active");
+                    $(this).addClass("active");
+                    var tab = $(this).attr("data-tab");
+                    $(".tab.content").removeClass("active");
+                    $(".tab.content[data-tab=\"" + tab + "\"]").addClass("active");
                 });
+            */
+            $('.ui.menu .item').tab({
+                history: false,
+                alwaysRefresh: true
+            });
 
-                var countTab = function() {
-                    var tabs = $('.ui.menu .item').tab();
-                    return tabs.length;
+            // get the current tabs count
+            var countTab = function() {
+                var tabs = $('.ui.menu .item').tab();
+                return tabs.length;
 
+            };
+
+            // get a fistTab Id
+            var firstTab = function() {
+                var tabs = $('.ui.menu .item').tab();
+                return tabs[0].id;
+
+            };
+
+            $('#first_tab').off('click').on('click', function() {
+                alert(firstTab());
+            });
+
+            $(".item > .close").off('click').on('click', function() {
+                $(".active").removeClass("active");
+                $(".tab.content").removeClass("active");
+                var mId = $(this).closest('.item').attr('id');
+                var cId = 'r' + mId;
+                //alert(mId);
+                $('#' + mId).remove();
+                $('#' + cId).remove();
+                var tab = $(this).attr("data-tab");
+                //$(".tab.content[data-tab=\"" + tab + "\"]").remove();
+                $("#" + firstTab()).addClass("active");
+                $(".tab.content[data-tab='" + firstTab() + "']").addClass("active");
+            });
+
+
+
+            var counter = 0;
+            $('#add_tab').off('click').on('click', function() {
+                counter++;
+                //alert('counter : ' + counter);
+                var tabCounter = countTab();
+                if (tabCounter > 5) {
+                    alert('탭 수는 5개를 넘을 수 없습니다');
+                    return false;
                 }
 
-                $('#remove_tab').off('click').on('click', function() {
-                    countTab();
-                });
+                if (tabCounter <= 5 && counter > 5) {
+                    tabCounter = Math.floor(Math.random() * 10) + 1;
+                    //alert('tabCounter : ' + tabCounter);             
+                }
+
+                if (tabCounter == 1) {color = "blue";}
+                if (tabCounter == 2) {color = "green";}
+                if (tabCounter == 3) {color = "yellow";}
+                if (tabCounter == 4) {color = "orange";}
+                if (tabCounter == 5) {color = "pink";}
+                if (tabCounter == 6) {color = "olive";} 
+                if (tabCounter == 7) {color = "teal";} 
+                if (tabCounter == 8) {color = "violet";} 
+                if (tabCounter == 9) {color = "brown";} 
+                if (tabCounter == 10) {color = "puple";}
+
+                // programmatically activating tab
+                $(".active").removeClass("active");
+                $(this).addClass("active");
+                var tab = $(this).attr("data-tab");
+                $(".tab.content").removeClass("active");
+
+                var tabId = (new Date()).getTime();
+                $('#main-tabs').append('<a id="' + tabId + '">' + tabId + '</a>');
+                $('#' + tabId).addClass('item active');
+                $('#' + tabId).addClass(color);
+                $('#' + tabId).attr('data-tab', tabId);
+                $('#' + tabId).append('&nbsp;<i class="small window close icon"></i>');
+
+                var resultId = 'r' + tabId;
+                $('#main-content').append('<div id="' + resultId + '"></div>');
+                $('#' + resultId).addClass('ui tab content');
+                $('#' + resultId).attr('data-tab', tabId);
+                $('#' + resultId).html('Contents : ' + resultId);
+
+
+                $('#result').addClass('item');
+                $('#result').attr('data-tab', 'tab-result');
+                $('#result').html('View Result');
+
+
+                $('.ui.menu .item').tab('change tab', tabId);
 
                 $(".item > .close").off('click').on('click', function() {
                     $(".active").removeClass("active");
@@ -67,81 +143,11 @@
                     //alert(mId);
                     $('#' + mId).remove();
                     $('#' + cId).remove();
-                    var tab = $(this).attr("data-tab");
-                    //$(".tab.content[data-tab=\"" + tab + "\"]").remove();
-                    $("#first").addClass("active");
-                    $(".tab.content[data-tab='first']").addClass("active");
+                    $("#" + firstTab()).addClass("active");
+                    $(".tab.content[data-tab='" + firstTab() + "']").addClass("active");
                 });
 
-
-
-                var counter = 0;
-                $('#add_tab').off('click').on('click', function() {
-                    counter++;
-                    //alert('counter : ' + counter);
-                    var tabCounter = countTab();
-                    if (tabCounter > 5) {
-                        alert('탭 수는 5개를 넘을 수 없습니다');
-                        return false;
-                    }
-
-                    if (tabCounter <= 5 && counter > 5) {
-                        tabCounter = Math.floor(Math.random() * 10) + 1;
-                        //alert('tabCounter : ' + tabCounter);
-                    }
-
-                    if (tabCounter == 1) {color = "blue";}
-                    if (tabCounter == 2) {color = "green";}
-                    if (tabCounter == 3) {color = "yellow";}
-                    if (tabCounter == 4) {color = "orange";}
-                    if (tabCounter == 5) {color = "pink";}
-                    if (tabCounter == 6) {color = "olive";} 
-                    if (tabCounter == 7) {color = "teal";} 
-                    if (tabCounter == 8) {color = "violet";} 
-                    if (tabCounter == 9) {color = "brown";} 
-                    if (tabCounter == 10) {color = "puple";} 
-
-
-                    // programmatically activating tab
-                    $(".active").removeClass("active");
-                    $(this).addClass("active");
-                    var tab = $(this).attr("data-tab");
-                    $(".tab.content").removeClass("active");
-
-                    var tabId = (new Date()).getTime();
-                    $('#main-tabs').append('<a id="' + tabId + '">' + tabId + '</a>');
-                    $('#' + tabId).addClass('item active');
-                    $('#' + tabId).addClass(color);
-                    $('#' + tabId).attr('data-tab', tabId);
-                    $('#' + tabId).append('&nbsp;<i class="small window close icon"></i>');
-
-                    var resultId = 'r' + tabId;
-                    $('#main-content').append('<div id="' + resultId + '"></div>');
-                    $('#' + resultId).addClass('ui tab content');
-                    $('#' + resultId).attr('data-tab', tabId);
-                    $('#' + resultId).html('Contents : ' + resultId);
-
-
-                    $('#result').addClass('item');
-                    $('#result').attr('data-tab', 'tab-result');
-                    $('#result').html('View Result');
-
-
-                    $('.ui.menu .item').tab('change tab', tabId);
-
-                    $(".item > .close").off('click').on('click', function() {
-                        $(".active").removeClass("active");
-                        $(".tab.content").removeClass("active");
-                        var mId = $(this).closest('.item').attr('id');
-                        var cId = 'r' + mId;
-                        //alert(mId);
-                        $('#' + mId).remove();
-                        $('#' + cId).remove();
-                        $("#first").addClass("active");
-                        $(".tab.content[data-tab='first']").addClass("active");
-                    });
-
-                });
+            });
 
         }); //ready
     </script>
