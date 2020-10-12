@@ -66,9 +66,10 @@ $('.dimmable.image').dimmer({
                     var title = $(this).text(); //<div class="ui left corner label"><i class="asterisk icon"></i></div>
                     $(this).html('<div class="ui mini left corner labeled input" style="width:100%"><input type="text" placeholder="' + title + '" class="column_search"/><div class="ui left corner label"><i class="search icon"></i></div></div>');
                     $('input', this).on('keyup change', function() {
-                        if (table.column(i).search() !== this.value) {
+                        // https://datatables.net/reference/type/column-selector
+                        if (table.column(i + ':visIdx').search() !== this.value) {
                             table
-                                .column(i)
+                                .column(i + ':visIdx')
                                 .search(this.value)
                                 .draw();
                         }
