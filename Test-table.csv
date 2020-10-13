@@ -1,0 +1,18 @@
+Id,Create Date,신청자명,신청자이메일,휴가종류,휴가시작일,휴가끝일,총 신청일,사유,비상연락처,대리업무자,승인자이메일,답변날짜,이메일발송여부,승인여부,코멘트
+e48ea0a8-c1bc-ace7-b84e-c7f2b146a50e,2020. 2. 18,성준영1,jysung@nshc.net,정기휴가,2020. 2. 17,2020. 2. 19,3,정기 휴가,1092779358,jhchoe@nshc.net,wykim@nshc.net,2020. 2. 18,EMAIL_SENT,승인됨,승인
+ea3de61-8d65-9b66-9664-257d21fad80a,2020. 2. 21,성준영2,jysung@nshc.net,정기휴가,2020. 2. 26,2020. 2. 26,1,정기 휴가,1092779358,jhchoe@nshc.net,wykim@nshc.net,2020. 2. 21,EMAIL_SENT,승인됨,승인
+982ab1e9-92e-c432-7125-46b5e0b46bd5,2020. 5. 14,성준영3,jysung@nshc.net,오후반차,2020. 5. 14,2020. 5. 14,0.5,개인사정,010-7129-9753,sklee@nshc.net,depark@nshc.net,2020. 5. 14,EMAIL_SENT,승인됨,승인
+a25b8348-6b43-91ad-721a-514387d2cd5a,2020. 5. 25,성준영4,jysung@nshc.net,오후반차,2020. 5. 28,2020. 5. 28,0.5,개인사유,010-7129-9753,bolinlee@nshc.net,depark@nshc.net,2020. 5. 25,EMAIL_SENT,승인됨,승인
+5beb9574-25f9-421d-d5f7-740dfbd56218,2020. 6. 4,성준영5,jysung@nshc.net,오후반차,2020. 6. 5,2020. 6. 5,0.5,개인사유,010-7129-9753,bolinlee@nshc.net,depark@nshc.net,2020. 6. 4,EMAIL_SENT,승인됨,승인
+a6a29911-75cc-5f-cb4c-b96b8cc2f16c,2020. 7. 15,성준영6,jysung@nshc.net,오후반차,2020. 7. 9,2020. 7. 9,0.5,개인사정,1047419753,bolinlee@nshc.net,depark@nshc.net,2020. 7. 15,EMAIL_SENT,승인됨,승인
+40cad978-445e-3c86-c140-c9d34ad1ada5,2020. 8. 6,성준영7,jysung@nshc.net,오후반차,2020. 8. 18,2020. 8. 18,0.5,개인사유,010-7129-9753,bolinlee@nshc.net,depark@nshc.net,2020. 8. 6,EMAIL_SENT,취소됨,승인
+be1b7707-1cee-4137-6d63-8df3e58d3053,2020. 8. 14,성준영8,jysung@nshc.net,정기휴가,2020. 8. 18,2020. 8. 18,1,개인사유,010-7129-9753,bolinlee@nshc.net,depark@nshc.net,2020. 8. 18,EMAIL_SENT,승인됨,승인
+d9052f1b-b640-8018-c0df-61c1b9e71be4,2020. 9. 24,성준영9,jysung@nshc.net,오후반차,2020. 10. 5,2020. 10. 5,0.5,개인사유,010-7129-9753,bolinlee@nshc.net,depark@nshc.net,2020. 9. 24,EMAIL_SENT,승인됨,승인
+93c729da-70ba-395e-8db0-978df7f22f7e,2020. 9. 24,성준영10,jysung@nshc.net,오후반차,2020. 10. 7,2020. 10. 7,0.5,개인사유,010-7129-9753,bolinlee@nshc.net,depark@nshc.net,2020. 9. 24,EMAIL_SENT,승인됨,승인
+f47037d9-e69e-c265-f16f-7ad79a972488,2020. 9. 28,성준영11,jysung@nshc.net,오전반차,2020. 10. 7,2020. 10. 7,0.5,개인사유,010-7129-9753,bolinlee@nshc.net,depark@nshc.net,2020. 9. 28,EMAIL_SENT,승인됨,승인
+d20373d0-b4d5-5014-5a52-65a76093877f,2020. 10. 6,황민희,mhwhang@nshc.net,오후반차,2020. 10. 12,2020. 10. 12,0.5,개인사유,1041217845,ytkim@nshc.net,ytkim@nshc.net,2020. 10. 6,EMAIL_SENT,승인됨,승인
+4fee40e2-6d85-3870-ec23-c4cd32a3b3cf,2020. 10. 7,안영호,yhan@nshc.net,정기휴가,2020. 11. 6,2020. 11. 6,1,개인 사유,1090694765,jyseo@nshc.net,jhjang@nshc.net,,EMAIL_SENT,대기중,
+6321fccb-3fa8-2c19-a21a-3b8e25423d9c,2020. 10. 8,이준영,jylee@nshc.net,정기휴가,2020. 10. 12,2020. 10. 12,1,병원진료,1050514914,ejham@nshc.net,ksyoon@nshc.net,2020. 10. 8,EMAIL_SENT,승인됨,승인
+baa55c69-a5a2-f970-bf0f-8147bc2a3a0,2020. 10. 8,김민우,mwkim@nshc.net,정기휴가,2020. 10. 16,2020. 10. 16,1,A형 간염 예방 접종 / 혈중 콜레스테롤 검사,1097879140,eskim@nshc.net,jysung@nshc.net,2020. 10. 8,EMAIL_SENT,승인됨,승인
+f8a77de3-88d0-388e-3467-a3775e37d1a0,2020. 10. 8,김은선,eskim@nshc.net,정기휴가,2020. 10. 19,2020. 10. 20,2,개인사유,1034043012,eskim@nshc.net,jysung@nshc.net,2020. 10. 8,EMAIL_SENT,승인됨,승인
+7753da31-b042-1616-e29-9b74692788,2020. 10. 8,진이준,yjjin@nshc.net,오후반차,2020. 10. 16,2020. 10. 16,0.5,개인사유,1088541345,bhyang@nshc.net,jhjang@nshc.net,,EMAIL_SENT,대기중,
