@@ -42,7 +42,7 @@ function tick(song, stepDuration) {
         currentSongTime = currentSongTime + stepDuration;
         nextStepTime = nextStepTime + stepDuration;
 	    
-        if (currentSongTime > (song.duration + 0.5)) {
+        if (currentSongTime > (song.duration + 0.5)) { // 끝날때 0.5초 여유롭게
 		
 			console.log("song.duration : " + song.duration);		
 			console.log("currentSongTime : " + currentSongTime);
