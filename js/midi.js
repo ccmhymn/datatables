@@ -53,9 +53,9 @@ function tick(song, stepDuration) {
 			});
 			
 		
-            currentSongTime = currentSongTime - song.duration;
-            sendNotes(song, songStart, 0, currentSongTime, audioContext, input, player);
-            songStart = songStart + song.duration;
+            //currentSongTime = currentSongTime - song.duration;
+            //sendNotes(song, songStart, 0, currentSongTime, audioContext, input, player);
+            //songStart = songStart + song.duration;
         }
     }
     if (nextPositionTime < audioContext.currentTime) {
