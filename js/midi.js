@@ -307,16 +307,29 @@ function tick(song, stepDuration) {
         nextPositionTime = audioContext.currentTime + 3;
 	    
 	    
-    } else if  (song.duration < audioContext.currentTime) {
+    } else if  (song.duration + 3 < audioContext.currentTime) {
 	    console.log("song duration : " + song.duration);
 	    console.log("current time : " + audioContext.currentTime);	    
 	    console.log("end of this song");
 	    audioContext.suspend().then(function() {
                 susresBtn.innerHTML = '<i class="play icon"></i>' //'RePlay'; 
 		console.log("suspend //end of this song");
+		return false;
             });
     }
     window.requestAnimationFrame(function(t) {
+	/*
+	 if  (song.duration + 3 < audioContext.currentTime) {
+	    console.log("song duration : " + song.duration);
+	    console.log("current time : " + audioContext.currentTime);	    
+	    console.log("end of this song");
+	    audioContext.suspend().then(function() {
+                susresBtn.innerHTML = '<i class="play icon"></i>' //'RePlay'; 
+		console.log("suspend //end of this song");
+		return false;
+            });
+	*/
+	    
         tick(song, stepDuration);
     });
 }
