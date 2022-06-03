@@ -42,6 +42,10 @@ function tick(song, stepDuration) {
         currentSongTime = currentSongTime + stepDuration;
         nextStepTime = nextStepTime + stepDuration;
         if (currentSongTime > song.duration) {
+		
+		return false;
+		
+		
 
 			console.log("song.duration : " + song.duration);		
 			console.log("currentSongTime : " + currentSongTime);
