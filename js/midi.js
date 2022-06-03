@@ -33,29 +33,25 @@ function startPlay(song) {
 }
 
 function tick(song, stepDuration) {
-	    //console.log("currentSongTime : " + currentSongTime);
-	    //console.log("song.duration : " + song.duration);
 	
-	 if  (currentSongTime >= song.duration) {
-	    console.log("currentSongTime : " + currentSongTime);
-	    console.log("song.duration : " + song.duration);
-	    console.log("end of this song");
-	    audioContext.suspend().then(function() {
-                //susresBtn.innerHTML = '<i class="play icon"></i>' //'RePlay'; 
-		console.log("suspend //end of this song");		
-            });
-		 return false;
-	 }
 	
 	
     if (audioContext.currentTime > nextStepTime - stepDuration) {
-	    console.log("01 currentSongTime : " + currentSongTime);
 	    
         sendNotes(song, songStart, currentSongTime, currentSongTime + stepDuration, audioContext, input, player);
         currentSongTime = currentSongTime + stepDuration;
         nextStepTime = nextStepTime + stepDuration;
         if (currentSongTime > song.duration) {
-	    console.log("02 currentSongTime : " + currentSongTime);
+
+			console.log("song.duration : " + song.duration);		
+			console.log("currentSongTime : " + currentSongTime);
+			console.log("end of this song");
+			audioContext.suspend().then(function() {
+				//susresBtn.innerHTML = '<i class="play icon"></i>' //'RePlay'; 
+				console.log("suspend //end of this song");
+				return false;
+			});
+			
 		
             currentSongTime = currentSongTime - song.duration;
             sendNotes(song, songStart, 0, currentSongTime, audioContext, input, player);
@@ -63,7 +59,6 @@ function tick(song, stepDuration) {
         }
     }
     if (nextPositionTime < audioContext.currentTime) {
-	    console.log("03 currentSongTime : " + currentSongTime);
         var o = document.getElementById('position');
         o.value = 100 * currentSongTime / song.duration;
         document.getElementById('percent').innerHTML = '' + Math.round(100 * currentSongTime / song.duration) + '%';
