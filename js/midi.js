@@ -305,14 +305,16 @@ function tick(song, stepDuration) {
         o.value = 100 * currentSongTime / song.duration;
         document.getElementById('percent').innerHTML = '' + Math.round(100 * currentSongTime / song.duration) + '%';
         nextPositionTime = audioContext.currentTime + 3;
-	    console.log(song.duration);
-	    console.log(audioContext.currentTime);	    
 	    
-    } else if  (song.duration == audioContext.currentTime) {
-	    console.log("end");
-	    alert("end");
-	    audioContext.close();
-	    //return false;
+	    
+    } else if  (song.duration < audioContext.currentTime) {
+	    console.log("song duration : " + song.duration);
+	    console.log("current time : " + audioContext.currentTime);	    
+	    console.log("end of this song");
+	    audioContext.suspend().then(function() {
+                susresBtn.innerHTML = '<i class="play icon"></i>' //'RePlay'; 
+		console.log("suspend //end of this song");
+            });
     }
     window.requestAnimationFrame(function(t) {
         tick(song, stepDuration);
