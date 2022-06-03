@@ -33,11 +33,17 @@ function startPlay(song) {
 }
 
 function tick(song, stepDuration) {
-	    console.log("1 song duration : " + song.duration);
-	    console.log("1 audioContext.currentTime : " + audioContext.currentTime);	    	    
-	    console.log("1 currentSongTime : " + currentSongTime);
-	    console.log("1 nextStepTime : " + nextStepTime);
-	    console.log("1 currentSongTime : " + currentSongTime);
+
+	 if  (currentSongTime >= song.duration) {
+	    console.log("currentSongTime : " + currentSongTime);
+	    console.log("song.duration : " + song.duration);
+	    console.log("end of this song");
+	    audioContext.suspend().then(function() {
+                //susresBtn.innerHTML = '<i class="play icon"></i>' //'RePlay'; 
+		console.log("suspend //end of this song");		
+            });
+		 return false;
+	 }
 	
 	
     if (audioContext.currentTime > nextStepTime - stepDuration) {
@@ -51,46 +57,14 @@ function tick(song, stepDuration) {
         }
     }
     if (nextPositionTime < audioContext.currentTime) {
-	    
-	    
-	    console.log("song duration : " + song.duration);
-	    console.log("audioContext.currentTime : " + audioContext.currentTime);	    	    
-	    console.log("currentSongTime : " + currentSongTime);
-	    console.log("nextStepTime : " + nextStepTime);
-	    console.log("currentSongTime : " + currentSongTime);
-	    
-	    
         var o = document.getElementById('position');
         o.value = 100 * currentSongTime / song.duration;
         document.getElementById('percent').innerHTML = '' + Math.round(100 * currentSongTime / song.duration) + '%';
         nextPositionTime = audioContext.currentTime + 3;
 	    
 	    
-    } /*else if  (song.duration + 3 < audioContext.currentTime) {
-	    console.log("song duration : " + song.duration);
-	    console.log("current time : " + audioContext.currentTime);	    
-	    console.log("end of this song");
-	    audioContext.suspend().then(function() {
-                susresBtn.innerHTML = '<i class="play icon"></i>' //'RePlay'; 
-		console.log("suspend //end of this song");
-		return false;
-            });
-    }*/
+    }
     window.requestAnimationFrame(function(t) {
-	
-	 if  (song.duration + 3 < audioContext.currentTime) {
-	    console.log("song duration : " + song.duration);
-	    console.log("current time : " + audioContext.currentTime);	    
-	    console.log("end of this song");
-	    audioContext.suspend().then(function() {
-                //susresBtn.innerHTML = '<i class="play icon"></i>' //'RePlay'; 
-		console.log("suspend //end of this song");
-		
-            });
-		 return false;
-	 }
-	
-	    
         tick(song, stepDuration);
     });
 }
