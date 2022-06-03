@@ -1,4 +1,5 @@
-		console.log('start');
+/*
+console.log('start');
 		var audioContext = null;
 		var player = null;
 		var reverberator = null;
@@ -254,10 +255,10 @@
 			xmlHttpRequest.send(null);
 		}
 		document.getElementById('filesinput').addEventListener('change', handleFileSelect, false);
-
+*/
 
 /****  Midi JS ****/
-/*
+
 console.log('start');
 var audioContext = null;
 var player = null;
@@ -599,7 +600,7 @@ function handleExample(path) {
     };
     xmlHttpRequest.send(null);
 }
-*/
+
 // MIDI 파일 업로드 용 코드        
 // document.getElementById('filesinput').addEventListener('change', handleFileSelect, false);
 /****  Midi JS ****/
