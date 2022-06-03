@@ -456,8 +456,8 @@ function buildControls(song) {
 
     // close the audiocontext
     stopBtn.onclick = function() {
-	//audioContext.suspend().then(function() {
-        audioContext.close().then(function() {
+	audioContext.suspend().then(function() {
+        //audioContext.close().then(function() {
             startBtn.removeAttribute('disabled');
             susresBtn.innerHTML = '<i class="pause icon"></i>';
             susresBtn.setAttribute('disabled', 'disabled');
