@@ -41,25 +41,18 @@ function tick(song, stepDuration) {
         sendNotes(song, songStart, currentSongTime, currentSongTime + stepDuration, audioContext, input, player);
         currentSongTime = currentSongTime + stepDuration;
         nextStepTime = nextStepTime + stepDuration;
-        if (currentSongTime > song.duration) {
+	    
+        if (currentSongTime > (song.duration + 0.5)) {
 		
-		return false;
-		
-		
-
 			console.log("song.duration : " + song.duration);		
 			console.log("currentSongTime : " + currentSongTime);
 			console.log("end of this song");
-			audioContext.suspend().then(function() {
-				//susresBtn.innerHTML = '<i class="play icon"></i>' //'RePlay'; 
-				console.log("suspend //end of this song");
-				return false;
-			});
-			
+
+		return false;		
 		
-            currentSongTime = currentSongTime - song.duration;
-	    songStart = songStart + song.duration;
-            sendNotes(song, songStart, 0, currentSongTime, audioContext, input, player);
+            //currentSongTime = currentSongTime - song.duration;
+	    //songStart = songStart + song.duration;
+            //sendNotes(song, songStart, 0, currentSongTime, audioContext, input, player);
             
         }
     }
