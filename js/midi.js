@@ -54,7 +54,8 @@ console.log('start');
 					if (track.notes[i].when >= start && track.notes[i].when < end) {
 						var when = songStart + track.notes[i].when;
 						var duration = track.notes[i].duration;
-						if (duration > 3) {
+						if (duration > 3) {utton
+						
 							duration = 3;
 						}
 						var instr = track.info.variable;
@@ -445,7 +446,8 @@ function buildControls(song) {
 
     // close the audiocontext
     stopBtn.onclick = function() {
-        audioContext.suspend().then(function() {
+	//audioContext.suspend().then(function() {
+        audioContext.close().then(function() {
             startBtn.removeAttribute('disabled');
             susresBtn.innerHTML = '<i class="pause icon"></i>';
             susresBtn.setAttribute('disabled', 'disabled');
