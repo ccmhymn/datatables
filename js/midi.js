@@ -271,6 +271,11 @@ var nextStepTime = 0;
 var nextPositionTime = 0;
 var loadedsong = null;
 
+    var startBtn = document.querySelector("#go");
+    var susresBtn = document.querySelector("#suspend");
+    var stopBtn = document.querySelector("#stop");
+
+
 function go() {
     document.getElementById('percent').innerHTML = 'starting...';
     try {
@@ -290,6 +295,13 @@ function startPlay(song) {
 }
 
 function tick(song, stepDuration) {
+	    console.log("1 song duration : " + song.duration);
+	    console.log("1 audioContext.currentTime : " + audioContext.currentTime);	    	    
+	    console.log("1 currentSongTime : " + currentSongTime);
+	    console.log("1 nextStepTime : " + nextStepTime);
+	    console.log("1 currentSongTime : " + currentSongTime);
+	
+	
     if (audioContext.currentTime > nextStepTime - stepDuration) {
         sendNotes(song, songStart, currentSongTime, currentSongTime + stepDuration, audioContext, input, player);
         currentSongTime = currentSongTime + stepDuration;
@@ -301,6 +313,15 @@ function tick(song, stepDuration) {
         }
     }
     if (nextPositionTime < audioContext.currentTime) {
+	    
+	    
+	    console.log("song duration : " + song.duration);
+	    console.log("audioContext.currentTime : " + audioContext.currentTime);	    	    
+	    console.log("currentSongTime : " + currentSongTime);
+	    console.log("nextStepTime : " + nextStepTime);
+	    console.log("currentSongTime : " + currentSongTime);
+	    
+	    
         var o = document.getElementById('position');
         o.value = 100 * currentSongTime / song.duration;
         document.getElementById('percent').innerHTML = '' + Math.round(100 * currentSongTime / song.duration) + '%';
@@ -319,7 +340,7 @@ function tick(song, stepDuration) {
     }*/
     window.requestAnimationFrame(function(t) {
 	
-	 if  (song.duration + 2 < audioContext.currentTime) {
+	 if  (song.duration + 3 < audioContext.currentTime) {
 	    console.log("song duration : " + song.duration);
 	    console.log("current time : " + audioContext.currentTime);	    
 	    console.log("end of this song");
@@ -437,9 +458,6 @@ function buildControls(song) {
     // https://codepen.io/CoolS2/pen/EdPxyz
     // http://grimmdude.com/MidiPlayerJS/
 
-    var startBtn = document.querySelector("#go");
-    var susresBtn = document.querySelector("#suspend");
-    var stopBtn = document.querySelector("#stop");
 
 
     susresBtn.setAttribute('disabled', 'disabled');
