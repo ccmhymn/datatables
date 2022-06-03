@@ -33,7 +33,9 @@ function startPlay(song) {
 }
 
 function tick(song, stepDuration) {
-
+	    console.log("currentSongTime : " + currentSongTime);
+	    //console.log("song.duration : " + song.duration);
+	
 	 if  (currentSongTime >= song.duration) {
 	    console.log("currentSongTime : " + currentSongTime);
 	    console.log("song.duration : " + song.duration);
