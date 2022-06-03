@@ -305,11 +305,11 @@ function tick(song, stepDuration) {
         o.value = 100 * currentSongTime / song.duration;
         document.getElementById('percent').innerHTML = '' + Math.round(100 * currentSongTime / song.duration) + '%';
         nextPositionTime = audioContext.currentTime + 3;
-    } else {
+    } else if  (nextPositionTime == audioContext.currentTime) {
 	    console.log("end");
 	    alert("end");
 	    audioContext.close();
-	    return false;
+	    //return false;
     }
     window.requestAnimationFrame(function(t) {
         tick(song, stepDuration);
