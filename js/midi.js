@@ -305,6 +305,9 @@ function tick(song, stepDuration) {
         o.value = 100 * currentSongTime / song.duration;
         document.getElementById('percent').innerHTML = '' + Math.round(100 * currentSongTime / song.duration) + '%';
         nextPositionTime = audioContext.currentTime + 3;
+    } else {
+	    audioContext.close();
+	    return false;
     }
     window.requestAnimationFrame(function(t) {
         tick(song, stepDuration);
