@@ -6,7 +6,7 @@ $('.dimmable.image').dimmer({
   
   
     $.ajax({
-        'url': 'https://ccmhymn.github.io/sheet/hymn-data.json'
+        'url': 'hymn-data.json'
     }).done(function(data) {
         var table = $('#myTable').DataTable({
             data: data,
@@ -89,9 +89,9 @@ $('.dimmable.image').dimmer({
             var simpleTitle = data['title'];
             var title = data['no'] + ". " + data['title'] + " | " + data['category'] + " | " + data['chord'] + " | " + data['beat'];
             var fullText = data['full_lyrics']; //가사전체
-            var imgUrl = "https://ccmhymn.github.io/sheet/asset/hymn/img/" + data['img']; // 이미지 다이렉트 링크
-            var midiUrl = "https://ccmhymn.github.io/sheet/asset/hymn/mid/" + data['midi']; // 미디 다운로드 링크
-            var textUrl = "https://ccmhymn.github.io/sheet/asset/hymn/lyrics/" + data['txt']; // 가사 미리보기 링크
+            var imgUrl = "asset/hymn/img/" + data['img']; // 이미지 다이렉트 링크
+            var midiUrl = "asset/hymn/mid/" + data['midi']; // 미디 다운로드 링크
+            var textUrl = "asset/hymn/lyrics/" + data['txt']; // 가사 미리보기 링크
             var youtubeUrl = "https://www.youtube.com/results?search_query=" + simpleTitle;
             
                                 handleExample(midiUrl);
